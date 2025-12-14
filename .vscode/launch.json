@@ -1,0 +1,69 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Tests",
+      "type": "debugpy",
+      "request": "launch",
+      "purpose": ["debug-test"],
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "env": {
+        "PYTEST_CURRENT_TEST": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Python: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "bert-training",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "core42_compass.model_trainer",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "args": ["-n", "bert_trainer", "-d", "nvidia"]
+    },
+    {
+      "name": "kw-experiment",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "core42_compass.eval_runner",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "args": ["-n", "kw_experiment", "-d", "nvidia", "-N", "100"]
+    },
+    {
+      "name": "regex-experiment",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "core42_compass.eval_runner",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "args": ["-n", "regex_experiment", "-d", "nvidia", "-N", "100"]
+    },
+    {
+      "name": "bert-experiment",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "core42_compass.eval_runner",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "args": ["-n", "bert_experiment", "-d", "nvidia", "-N", "100"]
+    },
+    {
+      "name": "llm-experiment",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "core42_compass.eval_runner",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "args": ["-n", "llm_filter_experiment", "-d", "nvidia", "-N", "50"]
+    }
+  ]
+}
